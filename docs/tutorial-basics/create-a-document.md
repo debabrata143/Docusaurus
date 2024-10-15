@@ -2,56 +2,58 @@
 sidebar_position: 2
 ---
 
-# Create a Document
+# API Names
 
-Documents are **groups of pages** connected through:
+This section lists the available APIs along with their descriptions.
 
-- a **sidebar**
-- **previous/next navigation**
-- **versioning**
+## User Management APIs
 
-## Create your first Doc
+- **`GET /api/v1/users`**: Retrieve a list of users.
+  
+- **`POST /api/v1/users`**: Create a new user.
 
-Create a Markdown file at `docs/hello.md`:
+- **`GET /api/v1/users/:id`**: Retrieve details of a specific user.
 
-```md title="docs/hello.md"
-# Hello
+- **`PUT /api/v1/users/:id`**: Update a specific user.
 
-This is my **first Docusaurus document**!
-```
+- **`DELETE /api/v1/users/:id`**: Delete a specific user.
 
-A new document is now available at [http://localhost:3000/docs/hello](http://localhost:3000/docs/hello).
+## Authentication APIs
 
-## Configure the Sidebar
+- **`POST /api/v1/auth/login`**: Authenticate a user and return a token.
 
-Docusaurus automatically **creates a sidebar** from the `docs` folder.
+- **`POST /api/v1/auth/logout`**: Log out the authenticated user.
 
-Add metadata to customize the sidebar label and position:
+- **`POST /api/v1/auth/refresh`**: Refresh the authentication token.
 
-```md title="docs/hello.md" {1-4}
+## Product Management APIs
+
+- **`GET /api/v1/products`**: Retrieve a list of products.
+
+- **`POST /api/v1/products`**: Create a new product.
+
+- **`GET /api/v1/products/:id`**: Retrieve details of a specific product.
+
+- **`PUT /api/v1/products/:id`**: Update a specific product.
+
+- **`DELETE /api/v1/products/:id`**: Delete a specific product.
+
+## Order Management APIs
+
+- **`GET /api/v1/orders`**: Retrieve a list of orders for the authenticated user.
+
+- **`POST /api/v1/orders`**: Create a new order.
+
+- **`GET /api/v1/orders/:id`**: Retrieve details of a specific order.
+
+- **`PUT /api/v1/orders/:id`**: Update a specific order.
+
+- **`DELETE /api/v1/orders/:id`**: Cancel a specific order.
+
 ---
-sidebar_label: 'Hi!'
-sidebar_position: 3
----
 
-# Hello
+## Additional Resources
 
-This is my **first Docusaurus document**!
-```
+For more details, please refer to the [API Specifications](./api-specifications.md) section.
 
-It is also possible to create your sidebar explicitly in `sidebars.js`:
 
-```js title="sidebars.js"
-export default {
-  tutorialSidebar: [
-    'intro',
-    // highlight-next-line
-    'hello',
-    {
-      type: 'category',
-      label: 'Tutorial',
-      items: ['tutorial-basics/create-a-document'],
-    },
-  ],
-};
-```

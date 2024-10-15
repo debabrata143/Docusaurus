@@ -2,33 +2,84 @@
 sidebar_position: 3
 ---
 
-# Create a Blog Post
+# API specifications
 
-Docusaurus creates a **page for each blog post**, but also a **blog index page**, a **tag system**, an **RSS** feed...
 
-## Create your first Post
+This section provides detailed specifications for the available APIs, including their endpoints, request methods, parameters, and expected responses.
 
-Create a file at `blog/2021-02-28-greetings.md`:
+## User Management API
 
-```md title="blog/2021-02-28-greetings.md"
----
-slug: greetings
-title: Greetings!
-authors:
-  - name: Joel Marcey
-    title: Co-creator of Docusaurus 1
-    url: https://github.com/JoelMarcey
-    image_url: https://github.com/JoelMarcey.png
-  - name: Sébastien Lorber
-    title: Docusaurus maintainer
-    url: https://sebastienlorber.com
-    image_url: https://github.com/slorber.png
-tags: [greetings]
----
+### Endpoint: `/api/v1/users`
 
-Congratulations, you have made your first post!
+- **Method**: `GET`
+- **Description**: Retrieve a list of users.
 
-Feel free to play around and edit this post as much as you like.
-```
+#### Request Parameters
 
-A new blog post is now available at [http://localhost:3000/blog/greetings](http://localhost:3000/blog/greetings).
+| Parameter   | Type     | Required | Description                      |
+|-------------|----------|----------|----------------------------------|
+| `limit`     | `number` | No       | Number of users to return (default: 10). |
+| `offset`    | `number` | No       | Offset for pagination (default: 0).      |
+
+#### Response
+
+```json
+{
+  "users": [
+    {
+      "id": "123",
+      "username": "john_doe",
+      "email": "john@example.com"
+    },
+    ...
+  ],
+  "total": 100
+}
+ ```
+
+ #### Request Body
+
+```json
+{
+  "name": "string",
+  "description": "string",
+  "price": "number",
+  "category": "string"
+}
+
+ ```
+
+  #### Response
+
+```json
+{
+  "id": "product_id",
+  "message": "Product created successfully"
+}
+
+ ```
+
+ 
+  #### Order Management API
+
+```json
+{
+  "orders": [
+    {
+      "id": "order_id",
+      "status": "pending",
+      "total": 29.99
+    },
+    {
+      "id": "order_id_2",
+      "status": "completed",
+      "total": 49.99
+    }
+  ]
+}
+
+
+ ```
+
+
+

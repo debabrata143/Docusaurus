@@ -2,42 +2,162 @@
 sidebar_position: 1
 ---
 
-# Create a Page
+# API category
 
-Add **Markdown or React** files to `src/pages` to create a **standalone page**:
+# Introduction to APIs
 
-- `src/pages/index.js` → `localhost:3000/`
-- `src/pages/foo.md` → `localhost:3000/foo`
-- `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
+APIs (Application Programming Interfaces) allow different software applications to communicate with each other. This documentation provides an overview of the APIs available in our platform, including how to authenticate, access endpoints, and use the specifications.
 
-## Create your first React Page
+## Why Use Our APIs?
 
-Create a file at `src/pages/my-react-page.js`:
+- **Integration**: Seamlessly integrate our services into your applications.
+- **Automation**: Automate processes using our APIs to enhance productivity.
+- **Customization**: Customize functionalities based on your unique needs.
 
-```jsx title="src/pages/my-react-page.js"
-import React from 'react';
-import Layout from '@theme/Layout';
 
-export default function MyReactPage() {
-  return (
-    <Layout>
-      <h1>My React page</h1>
-      <p>This is a React page</p>
-    </Layout>
-  );
-}
-```
+# Authentication API
 
-A new page is now available at [http://localhost:3000/my-react-page](http://localhost:3000/my-react-page).
+The Authentication API allows you to securely authenticate users and manage access tokens.
 
-## Create your first Markdown Page
+## Authentication Flow
 
-Create a file at `src/pages/my-markdown-page.md`:
+1. **Login**: Users provide their credentials to log in.
+2. **Token Generation**: Upon successful login, an access token is generated.
+3. **Access Resource**: Use the access token to authenticate subsequent API requests.
 
-```mdx title="src/pages/my-markdown-page.md"
-# My Markdown page
+## API Endpoints
 
-This is a Markdown page
-```
+### Login
 
-A new page is now available at [http://localhost:3000/my-markdown-page](http://localhost:3000/my-markdown-page).
+- **Endpoint**: `POST /api/auth/login`
+- **Request Body**:
+    ```json
+    {
+      "username": "string",
+      "password": "string"
+    }
+    ```
+- **Response**:
+    ```json
+    {
+      "access_token": "string",
+      "expires_in": 3600
+    }
+    ```
+
+### Logout
+
+- **Endpoint**: `POST /api/auth/logout`
+- **Headers**: `Authorization: Bearer {access_token}`
+- **Response**:
+    ```json
+    {
+      "message": "Successfully logged out."
+    }
+    ```
+
+### Token Refresh
+
+- **Endpoint**: `POST /api/auth/refresh`
+- **Request Body**:
+    ```json
+    {
+      "refresh_token": "string"
+    }
+    ```
+- **Response**:
+    ```json
+    {
+      "access_token": "string",
+      "expires_in": 3600
+    }
+    ```
+
+# API Endpoints
+
+This section lists all the available API endpoints.
+
+## User Management
+
+### Get User Details
+
+- **Endpoint**: `GET /api/users/{id}`
+- **Description**: Retrieve user details by user ID.
+- **Response**:
+    ```json
+    {
+      "id": "string",
+      "username": "string",
+      "email": "string",
+      "created_at": "timestamp"
+    }
+    ```
+
+### Update User
+
+- **Endpoint**: `PUT /api/users/{id}`
+- **Request Body**:
+    ```json
+    {
+      "username": "string",
+      "email": "string"
+    }
+    ```
+- **Response**:
+    ```json
+    {
+      "message": "User updated successfully."
+    }
+    ```
+
+## Product Management
+
+### List Products
+
+- **Endpoint**: `GET /api/products`
+- **Response**:
+    ```json
+    [
+      {
+        "id": "string",
+        "name": "string",
+        "price": "number"
+      }
+    ]
+    ```
+
+### Create Product
+
+- **Endpoint**: `POST /api/products`
+- **Request Body**:
+    ```json
+    {
+      "name": "string",
+      "price": "number"
+    }
+    ```
+- **Response**:
+    ```json
+    {
+      "message": "Product created successfully.",
+      "product_id": "string"
+    }
+    ```
+
+## Error Handling
+
+All API responses include standard HTTP status codes. Error responses will contain a message and a code for reference.
+
+- **Example Error Response**:
+    ```json
+    {
+      "error": {
+        "code": "INVALID_CREDENTIALS",
+        "message": "The provided credentials are invalid."
+      }
+    }
+    ```
+
+
+
+
