@@ -2,46 +2,41 @@
 sidebar_position: 4
 ---
 
-# Tutorial Intro
+# Solution Document
 
-Let's discover **Docusaurus in less than 5 minutes**.
+This section provides a visual representation of the solution architecture and flow.
 
-## Getting Started
+---
 
-Get started by **creating a new site**.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+## Overview
 
-### What you'll need
+The following flow diagram illustrates the process of user authentication and management within the application.
 
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
 
-## Generate a new site
+## API Categories
 
-Generate a new Docusaurus site using the **classic template**.
+APIs in this solution are categorized into specific groups, each serving a unique purpose. The categories help modularize the functionalities:
 
-The classic template will automatically be added to your project after you run the command:
+- **Authentication APIs**: Responsible for handling login, token generation, and session management.
+- **User Management APIs**: Deals with user creation, deletion, and profile updates.
+- **Data Processing APIs**: Manages data ingestion, validation, and output generation.
 
-```bash
-npm init docusaurus@latest my-website classic
-```
+---
 
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
+## Flow Diagram
 
-The command also installs all necessary dependencies you need to run Docusaurus.
+```mermaid
+graph TD
+    A[Start] --> B[User Submits Login Request]
+    B --> C{Is Login Valid?}
+    C -->|Yes| D[Generate Access Token]
+    C -->|No| E[Return Error Message]
+    D --> F[Redirect to User Dashboard]
+    E --> F
+    F --> G[User Performs Actions]
+    G --> H[Logout Request]
+    H --> I[Invalidate Access Token]
+    I --> J[Redirect to Login Page]
+    J --> A
 
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.

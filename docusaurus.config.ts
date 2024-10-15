@@ -78,7 +78,7 @@ const config: Config = {
           position: 'left',
           label: 'API Directory',
         },
-        {to: '/blog', label: 'Solution document', position: 'left'},
+        {to: '/docs/intro', label: 'Solution document', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
