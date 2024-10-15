@@ -26,17 +26,5 @@ APIs in this solution are categorized into specific groups, each serving a uniqu
 
 ## Flow Diagram
 
-```mermaid
-graph TD
-    A[Start] --> B[User Submits Login Request]
-    B --> C{Is Login Valid?}
-    C -->|Yes| D[Generate Access Token]
-    C -->|No| E[Return Error Message]
-    D --> F[Redirect to User Dashboard]
-    E --> F
-    F --> G[User Performs Actions]
-    G --> H[Logout Request]
-    H --> I[Invalidate Access Token]
-    I --> J[Redirect to Login Page]
-    J --> A
+![Api Diagram](./img/ApiDiagram.webp)
 
