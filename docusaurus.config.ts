@@ -66,7 +66,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'My Site',
+      title: 'MAPI API',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -93,8 +93,12 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Tutorial',
-              to: '/docs/intro',
+              label: 'API Directory',
+              to: '/docs/category/api-directory',
+            },
+            {
+              label: 'Solution Document',
+              to: '/docs/intro/',
             },
           ],
         },

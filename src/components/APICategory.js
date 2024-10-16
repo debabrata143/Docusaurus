@@ -46,7 +46,7 @@ const APICategory = () => {
 
   return (
     <div>
-      <h2>Authentication API</h2>
+      {/* <h2>Product catalog APIs</h2> */}
       {apiData.authenticationApi.endpoints.map((endpoint, index) => (
         <div key={index}>
           <h3>{endpoint.name}</h3>
@@ -91,7 +91,7 @@ const APICategory = () => {
         </div>
       ))}
 
-      <h2>User Management</h2>
+      {/* <h2>User Management</h2>
       {apiData.userManagement.endpoints.map((endpoint, index) => (
         <div key={index}>
           <h3>{endpoint.name}</h3>
@@ -166,7 +166,7 @@ const APICategory = () => {
             </>
           )}
         </div>
-      ))}
+      ))} */}
     </div>
   );
 };
