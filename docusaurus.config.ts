@@ -78,7 +78,7 @@ const config: Config = {
           position: 'left',
           label: 'API Directory',
         },
-        {to: '/docs/intro', label: 'Solution document', position: 'left'},
+        // {to: '/docs/intro', label: 'Solution document', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -96,10 +96,10 @@ const config: Config = {
               label: 'API Directory',
               to: '/docs/category/api-directory',
             },
-            {
-              label: 'Solution Document',
-              to: '/docs/intro/',
-            },
+            // {
+            //   label: 'Solution Document',
+            //   to: '/docs/intro/',
+            // },
           ],
         },
         {
