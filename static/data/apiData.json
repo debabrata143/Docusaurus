@@ -1852,29 +1852,101 @@
           "Authorization": "Bearer {access_token}"
         },
         "response": {
-          "200": "$ref: '#/components/responses/200CheckProductOfferingQualification_Task",
-          "201": "$ref: '#/components/responses/201CheckProductOfferingQualification",
-          "202": "description: Accepted",
-          "404": "$ref: '#/components/responses/404",
-          "405": "$ref: '#/components/responses/405",
-          "409": "$ref: '#/components/responses/409",
-          "500": "$ref: '#/components/responses/500"
+          "category": {
+            "@type": "CategoryRef",
+            "@baseType": "string",
+            "@schemaLocation": "string",
+            "href": "string",
+            "id": "string",
+            "name": "string",
+            "@referredType": "string",
+            "version": "string"
+          },
+          "description": "string",
+          "effectiveQualificationDate": "2024-10-16T10:51:04.880Z",
+          "expectedQualificationCompletionDate": "2024-10-16T10:51:04.880Z",
+          "expirationDate": "2024-10-16T10:51:04.880Z",
+          "instantSyncQualification": true,
+          "note": [
+            {
+              "@type": "Note",
+              "@baseType": "string",
+              "@schemaLocation": "string",
+              "id": "afa9-3d90aaa8da0f",
+              "author": "Mr. N. Bene",
+              "date": "2020-11-20T08:00:00Z",
+              "text": "This is important"
+            }
+          ]
         }
+        
       },
       {
         "name": "Product Ordering",
         "endpoint": "/ProductOrdering",
         "response": {
-          "200": "$ref: '#/components/responses/200CancelProductOrderArray",
-          "400": "$ref: '#/components/responses/400",
-          "401": "$ref: '#/components/responses/401",
-          "403": "$ref: '#/components/responses/403",
-          "404": "$ref: '#/components/responses/404",
-          "405": "$ref: '#/components/responses/405",
-          "500": "$ref: '#/components/responses/500",
-          "501": "$ref: '#/components/responses/501",
-          "503": "$ref: '#/components/responses/503"
+          "id": "110",
+          "quantity": 1,
+          "action": "add",
+          "itemPrice": [
+            {
+              "description": "Access Fee",
+              "name": "Access Fee",
+              "@type": "OrderPrice",
+              "priceType": "nonRecurring",
+              "price": {
+                "taxRate": 0,
+                "@type": "Price",
+                "dutyFreeAmount": {
+                  "unit": "EUR",
+                  "value": 0.99
+                },
+                "taxIncludedAmount": {
+                  "unit": "EUR",
+                  "value": 0.99
+                }
+              }
+            }
+          ],
+          "payment": [
+            {
+              "id": "2365",
+              "href": "https://host:port/paymentManagement/v5/cashPayment/2365",
+              "name": "Cash payment for access fee",
+              "@type": "PaymentRef",
+              "@referredType": "CashPayment"
+            }
+          ],
+          "product": {
+            "isBundle": false,
+            "@type": "Product",
+            "productCharacteristic": [
+              {
+                "name": "TEL_MSISDN",
+                "id": "Char6",
+                "@type": "StringCharacteristic",
+                "value": "415 279 7439",
+                "valueType": "string"
+              }
+            ],
+            "productSpecification": {
+              "id": "14307",
+              "href": "https://host:port/productCatalogManagement/v5/productSpecification/14307",
+              "name": "Mobile Telephony",
+              "version": "1",
+              "@type": "ProductSpecificationRef"
+            }
+          },
+          "productOffering": {
+            "id": "14305",
+            "href": "https://host:port/productCatalogManagement/v5/productOffering/14305",
+            "name": "TMF Mobile Telephony",
+            "@type": "ProductOfferingRef"
+          },
+          "state": "acknowledged",
+          "@type": "ProductOrderItem"
         }
+        
       }
     ]
   },

@@ -4,7 +4,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
   title: 'MAPI API documentation',
-  tagline: '',
+  tagline: ' ',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -76,7 +76,7 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'API Directory',
+          label: 'Use cases',
         },
         // {to: '/docs/intro', label: 'Solution document', position: 'left'},
         {
@@ -93,8 +93,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'API Directory',
-              to: '/docs/category/api-directory',
+              label: 'Use cases',
+              to: '/docs/category/use-cases',
             },
             // {
             //   label: 'Solution Document',
