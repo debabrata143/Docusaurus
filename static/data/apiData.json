@@ -1,0 +1,93 @@
+{
+    "authenticationApi": {
+      "endpoints": [
+        {
+          "name": "Login",
+          "endpoint": "POST /api/auth/login",
+          "requestBody": {
+            "username": "string",
+            "password": "string"
+          },
+          "response": {
+            "access_token": "string",
+            "expires_in": 3600
+          }
+        },
+        {
+          "name": "Logout",
+          "endpoint": "POST /api/auth/logout",
+          "headers": {
+            "Authorization": "Bearer {access_token}"
+          },
+          "response": {
+            "message": "Successfully logged out."
+          }
+        },
+        {
+          "name": "Token Refresh",
+          "endpoint": "POST /api/auth/refresh",
+          "requestBody": {
+            "refresh_token": "string"
+          },
+          "response": {
+            "access_token": "string",
+            "expires_in": 3600
+          }
+        }
+      ]
+    },
+    "userManagement": {
+      "endpoints": [
+        {
+          "name": "Get User Details",
+          "endpoint": "GET /api/users/{id}",
+          "description": "Retrieve user details by user ID.",
+          "response": {
+            "id": "string",
+            "username": "string",
+            "email": "string",
+            "created_at": "timestamp"
+          }
+        },
+        {
+          "name": "Update User",
+          "endpoint": "PUT /api/users/{id}",
+          "requestBody": {
+            "username": "string",
+            "email": "string"
+          },
+          "response": {
+            "message": "User updated successfully."
+          }
+        }
+      ]
+    },
+    "productManagement": {
+      "endpoints": [
+        {
+          "name": "List Products",
+          "endpoint": "GET /api/products",
+          "response": [
+            {
+              "id": "string",
+              "name": "string",
+              "price": "number"
+            }
+          ]
+        },
+        {
+          "name": "Create Product",
+          "endpoint": "POST /api/products",
+          "requestBody": {
+            "name": "string",
+            "price": "number"
+          },
+          "response": {
+            "message": "Product created successfully.",
+            "product_id": "string"
+          }
+        }
+      ]
+    }
+  }
+  
