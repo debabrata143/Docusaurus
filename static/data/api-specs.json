@@ -1,0 +1,1959 @@
+{
+  "DeviceProductOfferingAPI": {
+    "api": "Device Product Offering API",
+    "endpoint": "GET /ProductOfferings",
+    "description": "API to fetch available product offerings for devices.",
+    "request": {
+      "productId": "string",
+      "addons": [
+        {
+          "addonId": "string",
+          "quantity": "number"
+        }
+      ]
+    },
+    "response": {
+      "name": "Apple Iphone XR",
+      "description": "Iphone XR rich text description",
+      "id": "IPXRB64",
+      "lifecycleStatus": "active",
+      "shortDescription": "Iphone XR shortDescription",
+      "catalogRef": {
+        "id": "productCatalogId",
+        "version": "1.0.0"
+      },
+      "group": "device",
+      "isBundle": false,
+      "priority": 6,
+      "characteristics": [
+        {
+          "name": "Brand",
+          "valueType": "text",
+          "configurable": false,
+          "isCustomerVisible": true,
+          "minCardinality": 1,
+          "maxCardinality": 1,
+          "entityType": "description",
+          "characteristicValues": [
+            {
+              "valueType": "text",
+              "value": "Apple"
+            }
+          ]
+        },
+        {
+          "name": "Color",
+          "valueType": "text",
+          "configurable": false,
+          "isCustomerVisible": true,
+          "minCardinality": 1,
+          "maxCardinality": 1,
+          "entityType": "description",
+          "characteristicValues": [
+            {
+              "valueType": "text",
+              "value": "Black"
+            }
+          ]
+        },
+        {
+          "name": "Storage",
+          "valueType": "text",
+          "configurable": false,
+          "isCustomerVisible": true,
+          "minCardinality": 1,
+          "maxCardinality": 1,
+          "entityType": "description",
+          "characteristicValues": [
+            {
+              "valueType": "text",
+              "value": "64GB"
+            }
+          ]
+        },
+        {
+          "name": "LaunchYear",
+          "valueType": "text",
+          "configurable": false,
+          "isCustomerVisible": true,
+          "minCardinality": 1,
+          "maxCardinality": 1,
+          "entityType": "description",
+          "characteristicValues": [
+            {
+              "valueType": "text",
+              "value": "2018"
+            }
+          ]
+        },
+        {
+          "name": "SIM",
+          "valueType": "text",
+          "configurable": false,
+          "isCustomerVisible": true,
+          "minCardinality": 1,
+          "maxCardinality": 1,
+          "entityType": "description",
+          "characteristicValues": [
+            {
+              "valueType": "text",
+              "value": "physical_NanoSim"
+            }
+          ]
+        },
+        {
+          "name": "eSIM",
+          "valueType": "boolean",
+          "configurable": false,
+          "isCustomerVisible": true,
+          "minCardinality": 1,
+          "maxCardinality": 1,
+          "entityType": "description",
+          "characteristicValues": [
+            {
+              "valueType": "text",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "name": "preorderEnabled",
+          "valueType": "boolean",
+          "configurable": false,
+          "isCustomerVisible": true,
+          "minCardinality": 0,
+          "maxCardinality": 1,
+          "entityType": "description",
+          "characteristicValues": [
+            {
+              "valueType": "boolean",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "name": "resourcePoolReservationType",
+          "valueType": "text",
+          "configurable": false,
+          "isCustomerVisible": false,
+          "minCardinality": 1,
+          "maxCardinality": 1,
+          "entityType": "description",
+          "characteristicValues": [
+            {
+              "valueType": "text",
+              "value": "mobileDevice"
+            }
+          ]
+        }
+      ],
+      "tags": [
+        "MostPopular"
+      ],
+      "channels": [
+        {
+          "id": "OneShop"
+        }
+      ],
+      "categories": [
+        {
+          "id": "deviceMobile",
+          "version": "1.0.0"
+        }
+      ],
+      "productOfferingPrices": [
+        {
+          "name": "baseline price",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "basePrice",
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 960
+          },
+          "priceAlterations": [
+            {
+              "name": "contractDiscount",
+              "label": "full upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -48
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "upfront",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -24
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "upfront",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -96
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "false"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "upfront",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount on upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -36
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariffPlan XL24 discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -120
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTXL"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement24"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariffPlan XL12 discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -96
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTXL"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement12"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariffPlan M24 discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -72
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTM"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement24"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariffPlan M12 discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -48
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTM"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement12"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "upfront price",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "upfrontPrice",
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 840
+          },
+          "priceConditions": [
+            {
+              "type": "productOffering",
+              "id": "BESTXL"
+            },
+            {
+              "type": "productOfferingTerm",
+              "name": "agreement24"
+            },
+            {
+              "type": "specificationCharValue",
+              "name": "upfront",
+              "value": "true"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "contractDiscount",
+              "label": "installments discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -360
+              },
+              "isCustomerVisible": false,
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "upfront",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "contractDiscount",
+              "label": "full upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -48
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -24
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "upfront",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -96
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount on upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -36
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "upfront price",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "upfrontPrice",
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 864
+          },
+          "priceConditions": [
+            {
+              "type": "productOffering",
+              "id": "BESTXL"
+            },
+            {
+              "type": "productOfferingTerm",
+              "name": "agreement12"
+            },
+            {
+              "type": "specificationCharValue",
+              "name": "upfront",
+              "value": "true"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "contractDiscount",
+              "label": "installments discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -360
+              },
+              "isCustomerVisible": false,
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "contractDiscount",
+              "label": "full upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -48
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -24
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -96
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount on upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -36
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "upfront price",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "upfrontPrice",
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 888
+          },
+          "priceConditions": [
+            {
+              "type": "productOffering",
+              "id": "BESTM"
+            },
+            {
+              "type": "productOfferingTerm",
+              "name": "agreement24"
+            },
+            {
+              "type": "specificationCharValue",
+              "name": "upfront",
+              "value": "true"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "contractDiscount",
+              "label": "installments discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -360
+              },
+              "isCustomerVisible": false,
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "contractDiscount",
+              "label": "full upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -48
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -24
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -96
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount on upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -36
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "upfront price",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "upfrontPrice",
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 912
+          },
+          "priceConditions": [
+            {
+              "type": "productOffering",
+              "id": "BESTM"
+            },
+            {
+              "type": "productOfferingTerm",
+              "name": "agreement12"
+            },
+            {
+              "type": "specificationCharValue",
+              "name": "upfront",
+              "value": "true"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "contractDiscount",
+              "label": "installments discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -360
+              },
+              "isCustomerVisible": false,
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "contractDiscount",
+              "label": "full upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -48
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "installments",
+                  "value": "false"
+                }
+              ]
+            },
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -24
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -96
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount on upfront",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -36
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "installments",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "recurringFee",
+          "recurringChargePeriod": "month",
+          "recurringChargeDuration": 1,
+          "recurringChargeOccurrence": 24,
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 35
+          },
+          "priceConditions": [
+            {
+              "type": "productOffering",
+              "id": "BESTXL"
+            },
+            {
+              "type": "productOfferingTerm",
+              "name": "agreement24"
+            },
+            {
+              "type": "specificationCharValue",
+              "name": "installments",
+              "value": "true"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "contractDiscount",
+              "label": "upfront discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 24,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -20
+              },
+              "isCustomerVisible": false,
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "upfront",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 24,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 24,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -4
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount installments",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 24,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1.5
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "installments",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "recurringFee",
+          "recurringChargePeriod": "month",
+          "recurringChargeDuration": 1,
+          "recurringChargeOccurrence": 12,
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 72
+          },
+          "priceConditions": [
+            {
+              "type": "productOffering",
+              "id": "BESTXL"
+            },
+            {
+              "type": "productOfferingTerm",
+              "name": "agreement12"
+            },
+            {
+              "type": "specificationCharValue",
+              "name": "installments",
+              "value": "true"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "contractDiscount",
+              "label": "upfront discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 12,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -40
+              },
+              "isCustomerVisible": false,
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "upfront",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 12,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -2
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 12,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -8
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount installments",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 12,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -3
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "installments",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "recurringFee",
+          "recurringChargePeriod": "month",
+          "recurringChargeDuration": 1,
+          "recurringChargeOccurrence": 24,
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 37
+          },
+          "priceConditions": [
+            {
+              "type": "productOffering",
+              "id": "BESTM"
+            },
+            {
+              "type": "productOfferingTerm",
+              "name": "agreement24"
+            },
+            {
+              "type": "specificationCharValue",
+              "name": "installments",
+              "value": "true"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "contractDiscount",
+              "label": "upfront discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 24,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -56
+              },
+              "isCustomerVisible": false,
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "upfront",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 24,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 24,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -4
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount installments",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 24,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1.5
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "installments fee",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "recurringFee",
+          "recurringChargePeriod": "month",
+          "recurringChargeDuration": 1,
+          "recurringChargeOccurrence": 12,
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 76
+          },
+          "priceConditions": [
+            {
+              "type": "productOffering",
+              "id": "BESTM"
+            },
+            {
+              "type": "productOfferingTerm",
+              "name": "agreement12"
+            },
+            {
+              "type": "specificationCharValue",
+              "name": "installments",
+              "value": "true"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "contractDiscount",
+              "label": "upfront discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 12,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -40
+              },
+              "isCustomerVisible": false,
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "upfront",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 12,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -2
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 12,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -8
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount installments",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 12,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -3
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "recurringFeePrice",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "recurringFee",
+          "recurringChargePeriod": "month",
+          "recurringChargeDuration": 1,
+          "recurringChargeOccurrence": 10,
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 96
+          },
+          "priceConditions": [
+            {
+              "type": "specificationCharValue",
+              "name": "numberOfInstalements",
+              "value": "10"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 10,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -2.4
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 10,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -9.6
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount installment",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 10,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -3.6
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 10,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -3.1
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTM",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement12",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 10,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -3.2
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTM",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement24",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 10,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -3.3
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTXL",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement12",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 10,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -3.4
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTMXL",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement24",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "recurringFeePrice",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "recurringFee",
+          "recurringChargePeriod": "month",
+          "recurringChargeDuration": 1,
+          "recurringChargeOccurrence": 20,
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 48
+          },
+          "priceConditions": [
+            {
+              "type": "specificationCharValue",
+              "name": "numberOfInstalements",
+              "value": "20"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 20,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1.2
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 20,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -4.8
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount installments",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 20,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1.8
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 20,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -2.5
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTM",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement12",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 20,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -2.6
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTM",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement24",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 20,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -2.7
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTXL",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement12",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 20,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -2.8
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTMXL",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement24",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "recurringFeePrice",
+          "entityType": "ProductOfferingPrice",
+          "isBundle": false,
+          "priceType": "recurringFee",
+          "recurringChargePeriod": "month",
+          "recurringChargeDuration": 1,
+          "recurringChargeOccurrence": 30,
+          "price": {
+            "currencyCode": "EUR",
+            "taxIncludedAmount": 32
+          },
+          "priceConditions": [
+            {
+              "name": "numberOfInstalements",
+              "value": "30"
+            }
+          ],
+          "priceAlterations": [
+            {
+              "name": "credibleUserDiscount",
+              "label": "credible user discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 30,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -0.8
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCredibility",
+                  "value": "credible"
+                }
+              ]
+            },
+            {
+              "name": "eBillDiscount",
+              "label": "ebill discount",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 30,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -3.2
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "billDeliveryTypeElectronic",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "dinersDiscount",
+              "label": "diners discount installments",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 30,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1.2
+              },
+              "priceConditions": [
+                {
+                  "type": "specificationCharValue",
+                  "name": "dinersDiscount",
+                  "value": "true"
+                },
+                {
+                  "type": "specificationCharValue",
+                  "name": "userCanOptOut",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 30,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1.2
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTM",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement12",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 30,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1.3
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTM",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement24",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 30,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1.4
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTXL",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement12",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "name": "tariffDiscount",
+              "label": "tariff",
+              "entityType": "ProductOfferingPriceAlteration",
+              "priceType": "discount",
+              "recurringChargePeriod": "month",
+              "recurringChargeDuration": 1,
+              "recurringChargeOccurrence": 30,
+              "price": {
+                "currencyCode": "EUR",
+                "taxIncludedAmount": -1.5
+              },
+              "priceConditions": [
+                {
+                  "type": "productOffering",
+                  "id": "BESTMXL",
+                  "value": "true"
+                },
+                {
+                  "type": "productOfferingTerm",
+                  "name": "agreement24",
+                  "value": "true"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "productSpecificationRef": {
+        "id": "IPHONEXRSpec",
+        "version": "1.0.0"
+      }
+    }
+  },
+  "AddonSelectionAPI": {
+    "api": "Addon Selection API",
+    "endpoint": "POST /SelectAddon",
+    "description": "API to select addons for a product offering.",
+    "request": {
+      "group": "string"
+    },
+    "response": {
+      "category": {
+        "@type": "CategoryRef",
+        "@baseType": "string",
+        "@schemaLocation": "string",
+        "href": "string",
+        "id": "string",
+        "name": "string",
+        "@referredType": "string",
+        "version": "string"
+      },
+      "description": "string",
+      "effectiveQualificationDate": "2024-10-16T10:51:04.880Z",
+      "expectedQualificationCompletionDate": "2024-10-16T10:51:04.880Z",
+      "expirationDate": "2024-10-16T10:51:04.880Z",
+      "instantSyncQualification": true,
+      "note": [
+        {
+          "@type": "Note",
+          "@baseType": "string",
+          "@schemaLocation": "string",
+          "id": "afa9-3d90aaa8da0f",
+          "author": "Mr. N. Bene",
+          "date": "2020-11-20T08:00:00Z",
+          "text": "This is important"
+        }
+      ]
+    }
+  },
+  "TariffProductOfferingAPI": {
+    "api": "Tariff Product Offering API",
+    "endpoint": "POST /SelectAddon",
+    "description": "API to select addons for a product offering.",
+    "request": {
+      "group": "string"
+    },
+    "response": {
+      "id": "110",
+      "quantity": 1,
+      "action": "add",
+      "itemPrice": [
+        {
+          "description": "Access Fee",
+          "name": "Access Fee",
+          "@type": "OrderPrice",
+          "priceType": "nonRecurring",
+          "price": {
+            "taxRate": 0,
+            "@type": "Price",
+            "dutyFreeAmount": {
+              "unit": "EUR",
+              "value": 0.99
+            },
+            "taxIncludedAmount": {
+              "unit": "EUR",
+              "value": 0.99
+            }
+          }
+        }
+      ],
+      "payment": [
+        {
+          "id": "2365",
+          "href": "https://host:port/paymentManagement/v5/cashPayment/2365",
+          "name": "Cash payment for access fee",
+          "@type": "PaymentRef",
+          "@referredType": "CashPayment"
+        }
+      ],
+      "product": {
+        "isBundle": false,
+        "@type": "Product",
+        "productCharacteristic": [
+          {
+            "name": "TEL_MSISDN",
+            "id": "Char6",
+            "@type": "StringCharacteristic",
+            "value": "415 279 7439",
+            "valueType": "string"
+          }
+        ],
+        "productSpecification": {
+          "id": "14307",
+          "href": "https://host:port/productCatalogManagement/v5/productSpecification/14307",
+          "name": "Mobile Telephony",
+          "version": "1",
+          "@type": "ProductSpecificationRef"
+        }
+      },
+      "productOffering": {
+        "id": "14305",
+        "href": "https://host:port/productCatalogManagement/v5/productOffering/14305",
+        "name": "TMF Mobile Telephony",
+        "@type": "ProductOfferingRef"
+      },
+      "state": "acknowledged",
+      "@type": "ProductOrderItem"
+    }
+  }
+}
