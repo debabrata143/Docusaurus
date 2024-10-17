@@ -11,4 +11,12 @@ To display the tariff options, BFF will invoke GET /productOfferings with Group 
 
 <APIDocumentation apiKey="DeviceProductOfferingAPI" />
 
+## UML
+
+<!-- ![Some Diagram](/path/to/file.puml) -->
+
+
+![Docs Version Dropdown](./img/docsVersionDropdown.png)
+
+
 
