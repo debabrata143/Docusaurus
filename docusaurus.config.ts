@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'MAPI API documentation',
-  tagline: '',
+  title: 'My Site',
+  tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -66,7 +66,7 @@ const config: Config = {
     // Replace with your project's social card
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'MAPI API documentation',
+      title: 'My Site',
       logo: {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
@@ -78,7 +78,7 @@ const config: Config = {
           position: 'left',
           label: 'Capabilities',
         },
-        // {to: '/blog', label: 'Blog', position: 'left'},
+        {to: '/blog', label: 'Blog', position: 'left'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
@@ -93,8 +93,8 @@ const config: Config = {
           title: 'Docs',
           items: [
             {
-              label: 'Capabilities',
-              to: '/docs/browse-offerings/use-case-1',
+              label: 'Tutorial',
+              to: '/docs/intro',
             },
           ],
         },
@@ -117,16 +117,16 @@ const config: Config = {
         },
         {
           title: 'More',
-          // items: [
-          //   {
-          //     label: 'Blog',
-          //     to: '/blog',
-          //   },
-          //   {
-          //     label: 'GitHub',
-          //     href: 'https://github.com/facebook/docusaurus',
-          //   },
-          // ],
+          items: [
+            {
+              label: 'Blog',
+              to: '/blog',
+            },
+            {
+              label: 'GitHub',
+              href: 'https://github.com/facebook/docusaurus',
+            },
+          ],
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
@@ -136,19 +136,6 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
   } satisfies Preset.ThemeConfig,
-  plugins: [
-    function myRedirectPlugin(context, options) {
-      return {
-        name: 'my-redirect-plugin',
-        onRouteDidChange({ location }) {
-          if (location.pathname === '/') {
-            // Redirect to the desired documentation page
-            window.location.href = '/docs/browse-offerings/use-case-1';
-          }
-        },
-      };
-    },
-  ],
 };
 
 export default config;
