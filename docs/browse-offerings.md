@@ -10,6 +10,10 @@ import RightPane from '../src/components/RightPane';
 import SolutionDescription from '../src/components/SolutionDescription';
 import PayloadExamples from '../src/components/PayloadExamples';
 import ApiSpecs from '../src/components/ApiSpecs';
+import examples from '../static/data/BrowseOfferingsPayload.json'; 
+
+## API Guide
+
 
 <div className="container">
   <div className="tabs-pane">
@@ -38,3 +42,41 @@ import ApiSpecs from '../src/components/ApiSpecs';
     </Tabs>
   </div>
 </div>
+
+## Business Example 
+
+### Device Product Offering
+
+**Request**:
+<pre>
+<code>{JSON.stringify(examples.deviceOffering.request, null, 2)}</code>
+</pre>
+
+**Response**:
+<pre>
+<code>{JSON.stringify(examples.deviceOffering.response, null, 2)}</code>
+</pre>
+
+### Tariff Product Offering
+
+**Request**:
+<pre>
+<code>{JSON.stringify(examples.tariffOffering.request, null, 2)}</code>
+</pre>
+
+**Response**:
+<pre>
+<code>{JSON.stringify(examples.tariffOffering.response, null, 2)}</code>
+</pre>
+
+### Addon Selection
+
+**Request**:
+<pre>
+<code>{JSON.stringify(examples.addonSelection.request, null, 2)}</code>
+</pre>
+
+**Response**:
+<pre>
+<code>{JSON.stringify(examples.addonSelection.response, null, 2)}</code>
+</pre>
