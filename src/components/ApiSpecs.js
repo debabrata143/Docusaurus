@@ -1,10 +1,10 @@
-// src/components/ApiSpecs.js
 import React from 'react';
 import apiSpecs from './../../static/data/BrowseOfferingsPayload.json';
+import '../css/custom.css'; 
 
 const ApiSpecs = () => {
   const renderApiSection = (title, request, response) => (
-    <div>
+    <div className="api-spec-section">
       <h4>{title} - API Request</h4>
       <pre>
         <code>{JSON.stringify(request, null, 2)}</code>
@@ -17,7 +17,7 @@ const ApiSpecs = () => {
   );
 
   return (
-    <div>
+    <div className="api-specs">
       <h3>API Specifications</h3>
 
       {apiSpecs.deviceOffering && renderApiSection('Device Product Offering', apiSpecs.deviceOffering.request, apiSpecs.deviceOffering.response)}

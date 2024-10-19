@@ -30,3 +30,67 @@
 }
 
 
+/* Style for the search bar */
+.search-bar {
+  margin-bottom: 20px; /* Add space below the search bar */
+  padding: 12px 15px; /* Increased padding for better touch targets */
+  width: 100%; /* Full width */
+  border: 2px solid #0070f3; /* Primary color border */
+  border-radius: 5px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: border-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+.search-bar:focus {
+  border-color: #005bb5; /* Darker shade on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Highlight on focus */
+}
+
+/* Style for the payload list */
+.payload-list {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+}
+
+.payload-list li {
+  margin: 10px 0; /* Space between items */
+  border: 1px solid #eaeaea; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s; /* Smooth background color change */
+}
+
+.payload-list li a {
+  display: block; /* Make the whole list item clickable */
+  padding: 10px; /* Padding inside list item */
+  text-decoration: none; /* Remove underline */
+  color: #0070f3; /* Primary color */
+  font-weight: 600; /* Bold text */
+}
+
+.payload-list li:hover {
+  background-color: #f0f8ff; /* Light blue background on hover */
+}
+
+.selected-json {
+  margin-top: 20px; /* Space above selected JSON */
+  padding: 15px; /* Padding inside */
+  border: 1px solid #eaeaea; /* Light border */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #fafafa; /* Light gray background */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  white-space: pre-wrap; /* Preserve whitespace in JSON output */
+}
+
+.selected-json h4 {
+  margin: 0 0 10px; /* Margin below heading */
+}
+
+
+.api-spec-section h4 {
+  font-size: 20px; /* Size for section headings */
+  margin: 10px 0; /* Space around section heading */
+  color: #0070f3; /* Primary color for section headings */
+}

@@ -1,15 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import '../css/custom.css'; 
 
 const PayloadExamples = () => {
   const [jsonData, setJsonData] = useState(null);
   const [selectedJson, setSelectedJson] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
     const fetchJsonData = async () => {
       try {
-        const response = await fetch('/data/BrowseOfferingsPayload.json'); // Adjust the path based on your setup
+        const response = await fetch('/data/BrowseOfferingsPayload.json');
         if (!response.ok) {
           throw new Error('Failed to fetch data from the server');
         }
@@ -30,9 +32,15 @@ const PayloadExamples = () => {
     if (jsonData && jsonData[type]) {
       setSelectedJson(jsonData[type]);
     } else {
-      setSelectedJson(null); // Clear selection if the type doesn't exist
+      setSelectedJson(null);
     }
   };
+
+  const filteredTypes = jsonData
+    ? Object.keys(jsonData).filter((type) =>
+        jsonData[type].title.toLowerCase().includes(searchQuery.toLowerCase())
+      )
+    : [];
 
   if (loading) {
     return <div>Loading...</div>;
@@ -45,19 +53,25 @@ const PayloadExamples = () => {
   return (
     <div>
       <h3>Payload</h3>
-      <ul>
-        {jsonData &&
-          Object.keys(jsonData).map((type) => (
-            <li key={type}>
-              <a href="#" onClick={(e) => { e.preventDefault(); handleJsonSelection(type); }}>
-                {jsonData[type].title}
-              </a>
-            </li>
-          ))}
+      <input
+        type="text"
+        placeholder="Search payload types..."
+        value={searchQuery}
+        onChange={(e) => setSearchQuery(e.target.value)}
+        className="search-bar" // Apply search bar styling
+      />
+      <ul className="payload-list"> {/* Apply list styling */}
+        {filteredTypes.map((type) => (
+          <li key={type}>
+            <a href="#" onClick={(e) => { e.preventDefault(); handleJsonSelection(type); }}>
+              {jsonData[type].title}
+            </a>
+          </li>
+        ))}
       </ul>
 
       {selectedJson && (
-        <div>
+        <div className="selected-json"> {/* Apply selected JSON styling */}
           <h4>Selected JSON:</h4>
           <pre>{JSON.stringify(selectedJson, null, 2)}</pre>
         </div>
