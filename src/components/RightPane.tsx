@@ -9,7 +9,7 @@ const RightPane: React.FC = () => {
   useEffect(() => {
     const fetchJsonData = async () => {
       try {
-        const response = await fetch('/data/BrowseOfferingsPayload.json'); // Adjust the path based on your setup
+        const response = await fetch('/data/BrowseOfferingsPayload.yml'); // Adjust the path based on your setup
         if (!response.ok) {
           throw new Error('Failed to fetch data from the server');
         }

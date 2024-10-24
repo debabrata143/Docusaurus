@@ -1,5 +1,6 @@
 import React from 'react';
-import apiSpecs from './../../static/data/BrowseOfferingsPayload.json';
+// Import the YAML file instead of the JSON file
+import apiSpecs from './../../static/data/BrowseOfferingsPayload.yml';
 import '../css/custom.css'; 
 
 const ApiSpecs = () => {

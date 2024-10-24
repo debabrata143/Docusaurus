@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import yaml from 'js-yaml';  // Import js-yaml for YAML parsing
 import '../css/custom.css'; 
 
 const PayloadExamples = () => {
@@ -9,23 +10,24 @@ const PayloadExamples = () => {
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {
-    const fetchJsonData = async () => {
+    const fetchYamlData = async () => {
       try {
-        const response = await fetch('/data/BrowseOfferingsPayload.json');
+        const response = await fetch('/data/BrowseOfferingsPayload.yml');
         if (!response.ok) {
           throw new Error('Failed to fetch data from the server');
         }
-        const data = await response.json();
-        setJsonData(data);
+        const textData = await response.text();
+        const parsedData = yaml.load(textData); // Parse YAML into JSON
+        setJsonData(parsedData);
       } catch (error) {
         setError(error.message);
-        console.error('Failed to fetch JSON data:', error);
+        console.error('Failed to fetch or parse YAML data:', error);
       } finally {
         setLoading(false);
       }
     };
 
-    fetchJsonData();
+    fetchYamlData();
   }, []);
 
   const handleJsonSelection = (type) => {
@@ -38,7 +40,7 @@ const PayloadExamples = () => {
 
   const filteredTypes = jsonData
     ? Object.keys(jsonData).filter((type) =>
-        jsonData[type].title.toLowerCase().includes(searchQuery.toLowerCase())
+        jsonData[type]?.title.toLowerCase().includes(searchQuery.toLowerCase())
       )
     : [];
 

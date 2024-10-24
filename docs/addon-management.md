@@ -10,7 +10,7 @@ import RightPane from '../src/components/RightPane';
 import SolutionDescription from '../src/components/SolutionDescription';
 import PayloadExamples from '../src/components/PayloadExamples';
 import ApiSpecs from '../src/components/ApiSpecs';
-import examples from '../static/data/BrowseOfferingsPayload.json'; 
+import examples from '../static/data/BrowseOfferingsPayload.yml'; 
 
 ## API Guide
 

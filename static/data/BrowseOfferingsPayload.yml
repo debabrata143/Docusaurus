@@ -1,0 +1,153 @@
+deviceOffering:
+  title: "Device Product Offering"
+  request:
+    method: "POST"
+    endpoint: "/deviceOfferings"
+    body:
+      devices:
+        - id: "device-001"
+          name: "Apple 5T"
+          manufacturer: "Brand A"
+          specs:
+            screenSize: "6.1 inches"
+            battery: "3000 mAh"
+            ram: "4 GB"
+            storage: "64 GB"
+          features:
+            - "5G"
+            - "Water Resistant"
+            - "Wireless Charging"
+        - id: "device-002"
+          name: "Phone Model B"
+          manufacturer: "Brand B"
+          specs:
+            screenSize: "6.5 inches"
+            battery: "4000 mAh"
+            ram: "6 GB"
+            storage: "128 GB"
+          features:
+            - "5G"
+            - "High Refresh Rate Display"
+            - "Fast Charging"
+        - id: "device-003"
+          name: "Tablet Model X"
+          manufacturer: "Brand C"
+          specs:
+            screenSize: "10.2 inches"
+            battery: "6000 mAh"
+            ram: "4 GB"
+            storage: "256 GB"
+          features:
+            - "Stylus Support"
+            - "High-Resolution Display"
+    headers:
+      Authorization: "Bearer <token>"
+      Content-Type: "application/json"
+  response:
+    statusCode: 200
+    data:
+      offerings:
+        - id: "offering-001"
+          name: "Standard Device Package"
+          price: 999.99
+          discount: 10
+          availability: "In Stock"
+          warranty:
+            duration: "2 years"
+            type: "Limited"
+          includedItems:
+            - "Device"
+            - "Charger"
+            - "User Manual"
+        - id: "offering-002"
+          name: "Premium Device Package"
+          price: 1299.99
+          discount: 15
+          availability: "Pre-Order"
+          warranty:
+            duration: "3 years"
+            type: "Extended"
+          includedItems:
+            - "Device"
+            - "Charger"
+            - "User Manual"
+            - "Premium Headphones"
+            - "Screen Protector"
+
+tariffOffering:
+  title: "Tariff Product Offering"
+  request:
+    method: "GET"
+    endpoint: "/tariffOfferings"
+    params:
+      tariffType: "Standard"
+      region: "North America"
+    headers:
+      Authorization: "Bearer <token>"
+      Content-Type: "application/json"
+  response:
+    statusCode: 200
+    data:
+      tariffs:
+        - id: "tariff-001"
+          name: "Standard Tariff Plan"
+          price: 29.99
+          description: "A standard plan with 100 GB data"
+          features:
+            - "Unlimited Calls"
+            - "Unlimited Texts"
+            - "Data Rollover"
+          contract:
+            duration: "12 months"
+            penaltyFee: 150
+        - id: "tariff-002"
+          name: "Premium Tariff Plan"
+          price: 49.99
+          description: "An unlimited data plan"
+          features:
+            - "Unlimited Calls"
+            - "Unlimited Texts"
+            - "No Data Cap"
+          contract:
+            duration: "24 months"
+            penaltyFee: 250
+
+addonSelection:
+  title: "Addon Selection"
+  request:
+    method: "POST"
+    endpoint: "/addonSelection"
+    body:
+      selectedAddons:
+        - id: "addon-001"
+          name: "Extra Data Pack"
+          dataAmount: "5 GB"
+          duration: "30 days"
+        - id: "addon-002"
+          name: "International Calls"
+          duration: "30 days"
+          countries:
+            - "USA"
+            - "Canada"
+            - "UK"
+    headers:
+      Authorization: "Bearer <token>"
+      Content-Type: "application/json"
+  response:
+    statusCode: 200
+    data:
+      addons:
+        - id: "addon-001"
+          name: "Extra Data Pack"
+          price: 9.99
+          validity: "30 days"
+          includedFeatures:
+            - "Additional 5 GB of data"
+            - "No additional fees"
+        - id: "addon-002"
+          name: "International Calls"
+          price: 14.99
+          validity: "30 days"
+          includedFeatures:
+            - "Unlimited calls to selected countries"
+            - "No hidden charges"
