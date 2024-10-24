@@ -54,7 +54,7 @@ const PayloadExamples = () => {
 
   return (
     <div>
-      <h3>Payload in YAML Format</h3>
+      <h3>Payload in JSON Format</h3>
       <input
         type="text"
         placeholder="Search payload types..."

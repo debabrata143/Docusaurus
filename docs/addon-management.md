@@ -29,7 +29,7 @@ import yaml from 'js-yaml';
         <ApiSpecs /> 
       </TabItem>
 
-      <TabItem value="payload" label="Payload - YAML">
+      <TabItem value="payload" label="Payload - JSON">
         <PayloadExamples />  
       </TabItem>
 
