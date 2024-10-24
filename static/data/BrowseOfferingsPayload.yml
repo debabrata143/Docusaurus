@@ -42,7 +42,7 @@ deviceOffering:
             - "High-Resolution Display"
     headers:
       Authorization: "Bearer <token>"
-      Content-Type: "application/json"
+      Content-Type: "application/yaml"
   response:
     statusCode: 200
     data:
@@ -84,7 +84,7 @@ tariffOffering:
       region: "North America"
     headers:
       Authorization: "Bearer <token>"
-      Content-Type: "application/json"
+      Content-Type: "application/yaml"
   response:
     statusCode: 200
     data:
@@ -132,7 +132,7 @@ addonSelection:
             - "UK"
     headers:
       Authorization: "Bearer <token>"
-      Content-Type: "application/json"
+      Content-Type: "application/yaml"
   response:
     statusCode: 200
     data:
