@@ -46,7 +46,7 @@ import yaml from 'js-yaml';
 
 ## Business Example 
 
-### Device Product Offering
+### Device Product Offerings
 
 **Request**:
 <pre>
