@@ -74,7 +74,7 @@ const PayloadExamples = () => {
 
       {selectedYaml && (
         <div className="selected-yaml">  {/* Display the selected YAML */}
-          <h4>Selected Payload (YAML):</h4>
+          <h4>Selected Payload (JSON):</h4>
           <pre>
             <code>{yaml.dump(selectedYaml)}</code> {/* Convert object back to YAML */}
           </pre>

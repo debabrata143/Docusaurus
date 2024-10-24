@@ -12,6 +12,7 @@ import PayloadExamples from '../src/components/PayloadExamples';
 import ApiSpecs from '../src/components/ApiSpecs';
 import examples from '../static/data/BrowseOfferingsPayload.yml'; 
 import yaml from 'js-yaml'; 
+import SwaggerUIYaml from '../src/components/SwaggerUIYaml';
 
 ## API Guide..
 
@@ -27,7 +28,8 @@ import yaml from 'js-yaml';
       </TabItem>
 
       <TabItem value="api" label="API Specs - YAML">
-        <ApiSpecs /> 
+       <SwaggerUIYaml /> 
+       
       </TabItem>
 
       <TabItem value="payload" label="Payload - JSON">
@@ -46,8 +48,8 @@ import yaml from 'js-yaml';
 
 ## Business Example 
 
-### Device Product Offerings
-
+### Device Product Offering
+    
 **Request**:
 <pre>
 <code>{yaml.dump(examples.deviceOffering.request, null, 2)}</code>
@@ -81,6 +83,5 @@ import yaml from 'js-yaml';
 <pre>
 <code>{yaml.dump(examples.addonSelection.response, null, 2)}</code>
 </pre>
-              
-
+        
     
