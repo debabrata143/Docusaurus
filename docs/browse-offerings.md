@@ -13,7 +13,7 @@ import ApiSpecs from '../src/components/ApiSpecs';
 import examples from '../static/data/BrowseOfferingsPayload.yml'; 
 import yaml from 'js-yaml'; 
 
-## API Guide
+## API Guide..
 
 
 <div className="container">
@@ -81,3 +81,6 @@ import yaml from 'js-yaml';
 <pre>
 <code>{yaml.dump(examples.addonSelection.response, null, 2)}</code>
 </pre>
+              
+
+    
