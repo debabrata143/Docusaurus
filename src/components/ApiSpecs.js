@@ -1,18 +1,18 @@
 import React from 'react';
-// Import the YAML file instead of the JSON file
-import apiSpecs from './../../static/data/BrowseOfferingsPayload.yml';
+import yaml from 'js-yaml';  // Import the js-yaml package to handle YAML parsing
+import apiSpecs from './../../static/data/BrowseOfferingsPayload.yml';  // Import YAML data
 import '../css/custom.css'; 
 
 const ApiSpecs = () => {
-  const renderApiSection = (title, request, response) => (
+  const renderYamlSection = (title, request, response) => (
     <div className="api-spec-section">
       <h4>{title} - API Request</h4>
       <pre>
-        <code>{JSON.stringify(request, null, 2)}</code>
+        <code>{yaml.dump(request)}</code> {/* Display the YAML format */}
       </pre>
       <h4>{title} - API Response</h4>
       <pre>
-        <code>{JSON.stringify(response, null, 2)}</code>
+        <code>{yaml.dump(response)}</code> {/* Display the YAML format */}
       </pre>
     </div>
   );
@@ -21,11 +21,11 @@ const ApiSpecs = () => {
     <div className="api-specs">
       <h3>API Specifications</h3>
 
-      {apiSpecs.deviceOffering && renderApiSection('Device Product Offering', apiSpecs.deviceOffering.request, apiSpecs.deviceOffering.response)}
+      {apiSpecs.deviceOffering && renderYamlSection('Device Product Offering', apiSpecs.deviceOffering.request, apiSpecs.deviceOffering.response)}
       
-      {apiSpecs.tariffOffering && renderApiSection('Tariff Product Offering', apiSpecs.tariffOffering.request, apiSpecs.tariffOffering.response)}
+      {apiSpecs.tariffOffering && renderYamlSection('Tariff Product Offering', apiSpecs.tariffOffering.request, apiSpecs.tariffOffering.response)}
       
-      {apiSpecs.addonSelection && renderApiSection('Addon Selection', apiSpecs.addonSelection.request, apiSpecs.addonSelection.response)}
+      {apiSpecs.addonSelection && renderYamlSection('Addon Selection', apiSpecs.addonSelection.request, apiSpecs.addonSelection.response)}
     </div>
   );
 };

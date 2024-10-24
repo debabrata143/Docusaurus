@@ -94,3 +94,16 @@
   margin: 10px 0; /* Space around section heading */
   color: #0070f3; /* Primary color for section headings */
 }
+
+/* .navbar{
+  background-color: red;
+} */
+
+
+/* .navbar{
+  background-color: red;
+}
+
+.navbar__link:hover, .navbar__link--active, .navbar__brand, .navbar__link{
+  color: #fff;
+} */

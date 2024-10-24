@@ -11,6 +11,7 @@ import SolutionDescription from '../src/components/SolutionDescription';
 import PayloadExamples from '../src/components/PayloadExamples';
 import ApiSpecs from '../src/components/ApiSpecs';
 import examples from '../static/data/BrowseOfferingsPayload.yml'; 
+import yaml from 'js-yaml'; 
 
 ## API Guide
 
@@ -49,34 +50,34 @@ import examples from '../static/data/BrowseOfferingsPayload.yml';
 
 **Request**:
 <pre>
-<code>{JSON.stringify(examples.deviceOffering.request, null, 2)}</code>
+<code>{yaml.dump(examples.deviceOffering.request, null, 2)}</code>
 </pre>
 
 **Response**:
 <pre>
-<code>{JSON.stringify(examples.deviceOffering.response, null, 2)}</code>
+<code>{yaml.dump(examples.deviceOffering.response, null, 2)}</code>
 </pre>
 
 ### Tariff Product Offering
 
 **Request**:
 <pre>
-<code>{JSON.stringify(examples.tariffOffering.request, null, 2)}</code>
+<code>{yaml.dump(examples.tariffOffering.request, null, 2)}</code>
 </pre>
 
 **Response**:
 <pre>
-<code>{JSON.stringify(examples.tariffOffering.response, null, 2)}</code>
+<code>{yaml.dump(examples.tariffOffering.response, null, 2)}</code>
 </pre>
 
 ### Addon Selection
 
 **Request**:
 <pre>
-<code>{JSON.stringify(examples.addonSelection.request, null, 2)}</code>
+<code>{yaml.dump(examples.addonSelection.request, null, 2)}</code>
 </pre>
 
 **Response**:
 <pre>
-<code>{JSON.stringify(examples.addonSelection.response, null, 2)}</code>
+<code>{yaml.dump(examples.addonSelection.response, null, 2)}</code>
 </pre>
